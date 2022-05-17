@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func Equal(a, b string) bool {
+func EqualTwoStr(a, b string) bool {
 	if len(a) != len(b) {
 		return false
 	}
@@ -34,16 +34,16 @@ func TestStrAddInt(t *testing.T) {
 	result3 := StrAddInt(first3, second3)
 	result4 := StrAddInt(first4, second4)
 
-	if !(Equal(exp1, result1)) {
+	if !(EqualTwoStr(exp1, result1)) {
 		t.Errorf("Incorrect result! exp '%s', got '%s'", exp1, result1)
 	}
-	if !(Equal(exp2, result2)) {
+	if !(EqualTwoStr(exp2, result2)) {
 		t.Errorf("Incorrect result! exp '%s', got '%s'", exp2, result2)
 	}
-	if !(Equal(exp3, result3)) {
+	if !(EqualTwoStr(exp3, result3)) {
 		t.Errorf("Incorrect result! exp  '%s', got '%s'", exp3, result3)
 	}
-	if !(Equal(exp4, result4)) {
+	if !(EqualTwoStr(exp4, result4)) {
 		t.Errorf("Incorrect result! exp  '%s', got '%s'", exp4, result4)
 	}
 
