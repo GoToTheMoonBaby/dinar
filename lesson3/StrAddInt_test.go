@@ -29,10 +29,10 @@ func TestStrAddInt(t *testing.T) {
 	exp3 := "-12345"
 	exp4 := "1230"
 
-	result1 := StrSub(first1, second1)
-	result2 := StrSub(first2, second2)
-	result3 := StrSub(first3, second3)
-	result4 := StrSub(first4, second4)
+	result1 := StrAddInt(first1, second1)
+	result2 := StrAddInt(first2, second2)
+	result3 := StrAddInt(first3, second3)
+	result4 := StrAddInt(first4, second4)
 
 	if !(EqualTwoStr(exp1, result1)) {
 		t.Errorf("Incorrect result! exp '%s', got '%s'", exp1, result1)
