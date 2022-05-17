@@ -9,9 +9,12 @@ func StrSub(first, second string) bool {
 	if len(second) > len(first) {
 		return false
 	}
+	if len(second) == 0 {
+		return true
+	}
 	for i := 0; i < len(first); i++ {
 		if first[i] == second[0] {
-			for j := 1; j < len(second); j++ {
+			for j := 0; j < len(second); j++ {
 				if (i+j < len(first)) && (first[i+j] == second[j]) {
 					flag = true
 				} else {
