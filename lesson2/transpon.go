@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package lesson2
 
 func transpon(slice [][]int) [][]int {
 	//создание нового среза с размером элемента входящего среза
@@ -14,10 +12,4 @@ func transpon(slice [][]int) [][]int {
 		}
 	}
 	return transponSlice // возвращаем новый срез
-}
-
-func main() {
-	arr := [][]int{{4, 56}, {8, 11}, {-1, 1}, {0, -100}} //инициализируем среза
-	fmt.Println(arr)                                     //вывод изначального среза
-	fmt.Println(transpon(arr))                           //вывод транспонированного среза
 }
