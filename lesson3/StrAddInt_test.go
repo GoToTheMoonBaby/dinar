@@ -1,18 +1,8 @@
-package main
+package lesson3
 
-import "testing"
-
-func EqualTwoStr(a, b string) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i := 0; i < len(a); i++ {
-		if a[i] != b[i] {
-			return false
-		}
-	}
-	return true
-}
+import (
+	"testing"
+)
 
 func TestStrAddInt(t *testing.T) {
 	first1 := "Go to the "
@@ -34,16 +24,16 @@ func TestStrAddInt(t *testing.T) {
 	result3 := StrAddInt(first3, second3)
 	result4 := StrAddInt(first4, second4)
 
-	if !(EqualTwoStr(exp1, result1)) {
+	if exp1 != result1 {
 		t.Errorf("Incorrect result! exp '%s', got '%s'", exp1, result1)
 	}
-	if !(EqualTwoStr(exp2, result2)) {
+	if exp2 != result2 {
 		t.Errorf("Incorrect result! exp '%s', got '%s'", exp2, result2)
 	}
-	if !(EqualTwoStr(exp3, result3)) {
+	if exp3 != result3 {
 		t.Errorf("Incorrect result! exp  '%s', got '%s'", exp3, result3)
 	}
-	if !(EqualTwoStr(exp4, result4)) {
+	if exp4 != result4 {
 		t.Errorf("Incorrect result! exp  '%s', got '%s'", exp4, result4)
 	}
 

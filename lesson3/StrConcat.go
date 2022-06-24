@@ -1,9 +1,9 @@
-package main
+package lesson3
 
 import "fmt"
 
 func StrConcat(first, second string) string {
-	return (first + second)
+	return first + second
 }
 
 func main() {
