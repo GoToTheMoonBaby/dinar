@@ -1,13 +1,5 @@
-package main
-
-import (
-	"fmt"
-)
+package lesson3
 
 func StrLen(str string) int {
 	return len([]rune(str))
-}
-
-func main() {
-	fmt.Print(StrLen("abcдцйr"))
 }
