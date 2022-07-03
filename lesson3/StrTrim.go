@@ -1,4 +1,4 @@
-package main
+package lesson3
 
 import (
 	"fmt"
@@ -62,9 +62,4 @@ func StrTrim(str, substr string, n int) string {
 		}
 	}
 	return newStr
-}
-
-func main() {
-	res := StrTrim("1MoonGo2Moon to 3Moonthe 4Moon!!5Moon!", "Moon", -1)
-	fmt.Printf(res)
 }
