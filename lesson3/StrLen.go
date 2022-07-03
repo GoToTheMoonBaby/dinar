@@ -9,5 +9,5 @@ func StrLen(str string) int {
 }
 
 func main() {
-	fmt.Print(StrLen("abcдцй"))
+	fmt.Print(StrLen("abcдцйr"))
 }

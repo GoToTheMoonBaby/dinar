@@ -65,6 +65,6 @@ func StrTrim(str, substr string, n int) string {
 }
 
 func main() {
-	res := StrTrim("1MoonGo2Moon to 3Moonthe 4Moon!!5Moon", "Moon", -1)
+	res := StrTrim("1MoonGo2Moon to 3Moonthe 4Moon!!5Moon!", "Moon", -1)
 	fmt.Printf(res)
 }
