@@ -1,0 +1,11 @@
+### Запрос с урока 4
+GET localhost:9090/v1/go-to-the-moon
+
+### Сохранение комментария
+POST localhost:9090/v1/comment
+Content-Type: application/json
+
+{
+  "name": "Dinar",
+  "comment": "Hello!"
+}

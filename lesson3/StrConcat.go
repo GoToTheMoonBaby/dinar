@@ -6,6 +6,6 @@ func StrConcat(first, second string) string {
 	return first + second
 }
 
-func main() {
+func tt() {
 	fmt.Printf(StrConcat("Hello ", "world!"))
 }

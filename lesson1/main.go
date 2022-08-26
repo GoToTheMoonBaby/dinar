@@ -2,6 +2,6 @@ package lesson1
 
 import "fmt"
 
-func main() {
+func lesson1() {
 	fmt.Println("Hello world!1")
 }

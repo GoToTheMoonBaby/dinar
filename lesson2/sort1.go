@@ -35,7 +35,7 @@ func ShakerSort(slice []int) {
 	}
 }
 
-func main() {
+func lesson2() {
 	arr := []int{5, 56, 546456, 8, 11, 0, -1} //инициализируем массив (слайс)
 	fmt.Println(arr)                          //вывод изначального массива
 	BubbleSort(arr)                           //выполнение функции сортировки Пузырьком
