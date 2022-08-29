@@ -5,12 +5,14 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
+	"os"
+	"time"
 )
 
 func Lesson4() {
 	r := mux.NewRouter()
 	r.HandleFunc("/v1/go-to-the-moon", mainPage).Methods("GET")
-	r.HandleFunc("/", handleGet).Methods("POST")
+	r.HandleFunc("/v1/comment", commentHandler).Methods("POST")
 
 	srv := &http.Server{
 		Addr:    ":8080",
@@ -20,14 +22,6 @@ func Lesson4() {
 	if err != nil {
 		println("err")
 	}
-	/*http.HandleFunc("/v1/go-to-the-moon", mainPage)
-	http.HandleFunc("/v1/comment", commentHandler)
-	port := ":9090"
-	println("Server listen on port:", port)
-	err := http.ListenAndServe(port, nil)
-	if err != nil {
-		println("err")
-	}*/
 }
 
 func mainPage(w http.ResponseWriter, r *http.Request) {
@@ -48,4 +42,21 @@ func commentHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fmt.Println(*comment)
+	txtFileName := "chat_log.txt"
+	stringCommentText := time.Now().Format("2006-01-02 15:04:05") + " From: " + comment.Name + " Comment: " + comment.Comment + "\r\n"
+	file, err := os.OpenFile(txtFileName, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
+	if err != nil {
+		fmt.Println("not create file:", err)
+		os.Exit(1)
+	}
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			fmt.Println("not close file:", err)
+		}
+	}(file)
+	_, err = file.WriteString(stringCommentText)
+	if err != nil {
+		fmt.Println("not write in file:", err)
+	}
 }
