@@ -1,4 +1,4 @@
-package lesson_huesson
+package connect_to_db
 
 import (
 	"context"

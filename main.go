@@ -1,9 +1,9 @@
 package main
 
 import (
-	"dinar/lesson_huesson"
+	"dinar/connect_to_db"
 )
 
 func main() {
-	lesson_huesson.Connect()
+	connect_to_db.Connect()
 }
