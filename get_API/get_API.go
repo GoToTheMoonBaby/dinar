@@ -21,7 +21,7 @@ func main() {
 
 	p := Payload{
 		User: "dinar",
-		Pass: "dinar8888",
+		Pass: "dinar",
 		To:   "79178710847",
 	}
 
