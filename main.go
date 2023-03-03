@@ -1,9 +1,9 @@
 package main
 
 import (
-	"dinar/lesson4"
+	"dinar/lesson_huesson"
 )
 
 func main() {
-	lesson4.Lesson4()
+	lesson_huesson.Connect()
 }
