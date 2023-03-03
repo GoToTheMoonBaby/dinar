@@ -94,6 +94,6 @@ func Connect() {
 		log.Fatal(err)
 	}
 	for _, v := range rowsSlice {
-		fmt.Println(v)
+		fmt.Println(v.Id, v.CreatedAt, v.ClientName, *v.Amount, *v.OrderComment)
 	}
 }
