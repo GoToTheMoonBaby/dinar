@@ -6,7 +6,9 @@ import (
 	"crypto/x509"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
+	"time"
 
 	pgx "github.com/jackc/pgx/v4"
 )
@@ -19,6 +21,14 @@ const (
 	dbname   = "dev"
 	ca       = "C:\\Users\\foxtrot\\GolandProjects\\dinar\\.postgresql\\root.crt"
 )
+
+type Row struct {
+	Id           int       `json:"Id"`
+	CreatedAt    time.Time `json:"Created_at"`
+	ClientName   string    `json:"Client_name"`
+	Amount       *int      `json:"Amount"`
+	OrderComment *string   `json:"Order_comment"`
+}
 
 func Connect() {
 
@@ -64,4 +74,26 @@ func Connect() {
 	}
 
 	fmt.Println(version)
+
+	rows, err := conn.Query(context.Background(), "SELECT * FROM public.table_dinar")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+
+	var rowsSlice []Row
+	for rows.Next() {
+		var r Row
+		err := rows.Scan(&r.Id, &r.CreatedAt, &r.ClientName, &r.Amount, &r.OrderComment)
+		if err != nil {
+			log.Fatal(err)
+		}
+		rowsSlice = append(rowsSlice, r)
+	}
+	if err := rows.Err(); err != nil {
+		log.Fatal(err)
+	}
+	for _, v := range rowsSlice {
+		fmt.Println(v)
+	}
 }
